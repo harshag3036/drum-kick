@@ -1,10 +1,12 @@
 for(var i=0;i<document.querySelectorAll(".drum").length;i++)
-{   document.querySelectorAll(".drum")[i].addEventListener("keypress",function(event){
+{   document.querySelectorAll(".drum")[i].addEventListener("keydown",function(event){
     buttonpress(event.key);
+    buttonAnimation(event.key);
   
 });
     document.querySelectorAll(".drum")[i].addEventListener("click",function(){
         buttonpress(this.innerHTML);
+        buttonAnimation(this.innerHTML);
     });
 }
 
@@ -46,4 +48,12 @@ switch(buttontext){
         console.log(buttontext);
 
 }
+}
+
+function buttonAnimation(curr_key){
+    var active=document.querySelector("."+curr_key);
+    active.classList.add("pressed");
+    setTimeout(function(){
+        active.classList.remove("pressed");
+    },100);
 }
