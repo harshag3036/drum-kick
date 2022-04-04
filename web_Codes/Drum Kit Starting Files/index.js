@@ -44,6 +44,8 @@ switch(buttontext){
         var audio =new Audio("sounds/kick-bass.mp3");
         audio.play();
         break;
+    case "k":
+        break;
     default:
         console.log(buttontext);
 
